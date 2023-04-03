@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "125b6d79-1274-4812-9330-dab64eaea5ef",
+		"name": "oauth2-demo-realm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25432314"
+	},
+	"item": [
+		{
+			"name": "configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://172.29.92.91:8443/realms/SpringBootKeycloak/.well-known/openid-configuration",
+					"protocol": "http",
+					"host": [
+						"172",
+						"29",
+						"92",
+						"91"
+					],
+					"port": "8443",
+					"path": [
+						"realms",
+						"SpringBootKeycloak",
+						".well-known",
+						"openid-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "login-service",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "7l9XDqIjOzD4vczR7jasNzYSWHslWvuV",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://172.29.92.91:8443/realms/SpringBootKeycloak/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"172",
+						"29",
+						"92",
+						"91"
+					],
+					"port": "8443",
+					"path": [
+						"realms",
+						"SpringBootKeycloak",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET microservice1/home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkODZiWmJOb3JxQnhNUVJwSUp1bi1mdWtIbUVDTTV0ZXVRd3BrOXJEclhJIn0.eyJleHAiOjE2Nzk5OTc4ODcsImlhdCI6MTY3OTk5NzU4NywianRpIjoiNmFiZjc1M2QtZDdmMy00YWNlLTlkYjgtYWNhYmNlNWIxOGRmIiwiaXNzIjoiaHR0cDovLzE3Mi4yOS45Mi45MTo4NDQzL3JlYWxtcy9vYXV0aDItZGVtby1yZWFsbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjYzAzN2Q5YS0xMzNiLTQzNmItYjMyYS00Yzc3MjJiM2ViYmEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJvYXV0aDItY2xpZW50LWNyZWRlbnRpYWxzIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW9hdXRoMi1jbGllbnQtY3JlZGVudGlhbHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRJZCI6Im9hdXRoMi1jbGllbnQtY3JlZGVudGlhbHMiLCJjbGllbnRIb3N0IjoiMTcyLjI5LjkyLjEwIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LW9hdXRoMi1jbGllbnQtY3JlZGVudGlhbHMiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjI5LjkyLjEwIn0.fxyEARPJnTMcNyhZkb2g8VzjBRQlNhgE-dlJBmTY05ZBAc2UdJwJdqFlms3MeW0X4FjkDhVvv8H6WnpluoJwu2KARSS4r17CHdWM3ZFPge-ZzQ9f7Qpf18j5QMr7RUZn_nA2xAC4vqB5CI1SkAAUF00v0T2cV8zbV2PKwAVdEi8VjS_xYBIT2lfszJ-xBYS3zFhPdBZMZhPlaVzbMl7jKiabKIbhYO4t7gDPZYIe_Gk1pBP6Shs8eDRsbQZqS1VS5uycSFGStAzz4KaOHwRCZGNddJpxHybxZLV8An78XEMOOajMJyw6FbfD4MMonCHpeAFEBGyApi3qAmFEGNtwcA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8083/microservice1/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"microservice1",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET microservice1/token",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "login-service",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "7l9XDqIjOzD4vczR7jasNzYSWHslWvuV",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://172.29.92.91:8443/realms/SpringBootKeycloak/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "keycloak bearer token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/microservice1/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"microservice1",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET microservice1/token web",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "login-service",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "7l9XDqIjOzD4vczR7jasNzYSWHslWvuV",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://172.29.92.91:8443/realms/SpringBootKeycloak/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "keycloak bearer token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/microservice1/home/web",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"microservice1",
+						"home",
+						"web"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
