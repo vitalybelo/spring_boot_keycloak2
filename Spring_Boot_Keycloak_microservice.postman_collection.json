@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "125b6d79-1274-4812-9330-dab64eaea5ef",
-		"name": "oauth2-demo-realm",
+		"name": "Spring_Boot_Keycloak_microservice",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25432314"
 	},
@@ -51,7 +51,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "7l9XDqIjOzD4vczR7jasNzYSWHslWvuV",
+							"value": "c6ZeHkxv6r32uyDTui91B2Nuy4eqZq0z",
 							"type": "text"
 						}
 					]
